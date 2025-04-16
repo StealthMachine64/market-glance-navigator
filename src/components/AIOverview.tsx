@@ -24,21 +24,22 @@ export function AIOverview({ overview, marketEffect }: AIOverviewProps) {
   }[marketEffect || 'neutral'];
 
   return (
-    <div className="mt-4 space-y-2 border-l-4 border-primary/30 pl-4 py-2">
-      <div className="flex items-start gap-2">
-        <span className="font-medium text-primary">AI Overview:</span>
-        <p className="text-sm text-foreground/90">{overview}</p>
+    <div className="mt-2 space-y-1 border-l-4 border-primary/30 pl-3 py-1">
+      <div className="flex items-center gap-2">
+        <span className="font-medium text-primary text-sm">AI Overview:</span>
+        <p className="text-xs text-foreground/90">{overview}</p>
       </div>
       
       {marketEffect && (
         <div className="flex items-center gap-2">
-          <span className="font-medium text-primary">Market Effect:</span>
+          <span className="font-medium text-primary text-sm">Market Effect:</span>
           <div className={cn("flex items-center gap-1", effectColor)}>
-            <EffectIcon className="h-4 w-4" />
-            <span className="text-sm font-medium capitalize">{marketEffect} Effect</span>
+            <EffectIcon className="h-3 w-3" />
+            <span className="text-xs font-medium capitalize">{marketEffect} Effect</span>
           </div>
         </div>
       )}
     </div>
   );
 }
+
