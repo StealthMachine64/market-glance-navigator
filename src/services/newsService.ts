@@ -131,18 +131,18 @@ export const sectors = [
   "Communication Services"
 ];
 
-export const getNewsByCategory = (category: string): NewsItem[] => {
+export const getNewsByCategory = (category: string, customNews: NewsItem[] = newsData): NewsItem[] => {
   if (category === 'Top News') {
-    return newsData;
+    return customNews;
   }
-  return newsData.filter(news => news.category === category);
+  return customNews.filter(news => news.category === category);
 };
 
-export const getNewsByStock = (symbol: string): NewsItem[] => {
-  return newsData.filter(news => news.relatedStocks?.includes(symbol));
+export const getNewsByStock = (symbol: string, customNews: NewsItem[] = newsData): NewsItem[] => {
+  return customNews.filter(news => news.relatedStocks?.includes(symbol));
 };
 
-export const getNewsBySector = (sector: string): NewsItem[] => {
+export const getNewsBySector = (sector: string, customNews: NewsItem[] = newsData): NewsItem[] => {
   const sectorStockMap: Record<string, string[]> = {
     "Technology": ["AAPL", "MSFT", "GOOGL", "NVDA", "INTC"],
     "Finance": ["JPM", "BAC", "V", "WFC", "C"],
@@ -157,7 +157,7 @@ export const getNewsBySector = (sector: string): NewsItem[] => {
   };
   
   const relatedStocks = sectorStockMap[sector] || [];
-  return newsData.filter(news => 
+  return customNews.filter(news => 
     news.category === sector || 
     news.relatedStocks?.some(stock => relatedStocks.includes(stock))
   );

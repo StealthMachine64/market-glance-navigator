@@ -1,6 +1,7 @@
 
 import { NewsItem as NewsItemType } from "@/types/news";
 import { cn } from "@/lib/utils";
+import { AIOverview } from "@/components/AIOverview";
 
 interface NewsItemProps {
   item: NewsItemType;
@@ -27,6 +28,14 @@ export function NewsItem({ item }: NewsItemProps) {
       {item.summary && (
         <p className="mt-2 text-muted-foreground">{item.summary}</p>
       )}
+      
+      {item.aiOverview && (
+        <AIOverview 
+          overview={item.aiOverview} 
+          marketEffect={item.marketEffect} 
+        />
+      )}
+      
       {item.relatedStocks && item.relatedStocks.length > 0 && (
         <div className="mt-2 flex flex-wrap gap-1">
           {item.relatedStocks.map(stock => (

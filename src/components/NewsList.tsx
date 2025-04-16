@@ -29,7 +29,7 @@ export function NewsList({ news }: NewsListProps) {
           <Button 
             variant="outline" 
             onClick={handleShowMore}
-            className="flex items-center gap-2"
+            className="flex items-center gap-2 bg-blue-900/30 border-blue-700/50 text-blue-100 hover:bg-blue-800/50"
           >
             <span>More News</span>
             <ChevronDown className="h-4 w-4" />

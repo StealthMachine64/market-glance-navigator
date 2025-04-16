@@ -5,6 +5,8 @@ export type NewsCategory = 'Top News' | 'Markets' | 'Economy' | 'Companies' | 'T
 
 export type Sentiment = 'bullish' | 'bearish' | 'neutral';
 
+export type MarketEffect = 'positive' | 'negative' | 'neutral';
+
 export interface NewsItem {
   id: string;
   title: string;
@@ -15,4 +17,6 @@ export interface NewsItem {
   category: NewsCategory;
   relatedStocks?: string[];
   sentiment?: Sentiment;
+  aiOverview?: string;
+  marketEffect?: MarketEffect;
 }
