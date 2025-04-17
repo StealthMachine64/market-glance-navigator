@@ -35,7 +35,7 @@ export function AIOverview({ overview, marketEffect }: AIOverviewProps) {
           <span className="font-medium text-white text-xs">Market Effect:</span>
           <div className={cn("flex items-center gap-1", effectColor)}>
             <EffectIcon className="h-2.5 w-2.5" />
-            <span className="text-[10px] font-medium capitalize">{marketEffect} Effect</span>
+            <span className="text-[16px] font-medium capitalize">{marketEffect} Effect</span>
           </div>
         </div>
       )}
