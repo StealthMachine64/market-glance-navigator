@@ -27,7 +27,7 @@ export function AIOverview({ overview, marketEffect }: AIOverviewProps) {
     <div className="border-l-4 border-primary/30 pl-2 py-0 space-y-0">
       <div className="flex items-center gap-1.5">
         <span className="font-medium text-white text-xs">AI Overview:</span>
-        <p className="text-[12px] text-white/80">{overview}</p>
+        <p className="text-[16px] text-white/80">{overview}</p>
       </div>
       
       {marketEffect && (
